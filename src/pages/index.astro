@@ -1,0 +1,18 @@
+---
+import AboutUs from '../components/AboutUs.astro';
+import Countdown from '../components/Countdown.astro';
+import HeroSection from '../components/HeroSection.astro';
+import Partners from '../components/Partners.astro';
+import Sponsors from '../components/Sponsors.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main class="space-y-40 mb-40">
+		<HeroSection/>
+		<Countdown/>
+		<Sponsors/>
+		<Partners/>
+    <AboutUs/>
+	</main>
+</Layout>
