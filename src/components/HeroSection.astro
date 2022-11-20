@@ -1,37 +1,65 @@
 ---
 import Container from "./Container.astro";
-
 ---
 
 <div class="relative">
-    <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
-        <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
-        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
+  >
+    <div
+      class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"
+    >
     </div>
-    <Container>
-        <div class="relative pt-36 ml-auto">
-            <div class="lg:w-2/3 text-center mx-auto">
-                <h1 class="text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-5xl">The one and only international CTF from <span class="text-primary dark:text-white">Bangladesh!</span></h1>
-                <p class="mt-8 text-gray-700 dark:text-green-300">KnightCTF is an international CTF competition organized by Knight Squad Community. 
+    <div
+      class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"
+    >
+    </div>
+  </div>
+  <Container>
+    <div class="relative pt-36 ml-auto">
+      <div class="lg:w-2/3 text-center mx-auto">
+        <div class="flex flex-col items-center">
+          <img src="./logo/KCTF_LOGO_Neon.png" width="150px" class="mb-5" />
 
-                  We started the trend to organize international CTF events in Bangladesh with KnightCTF-2022 and we are determined to continue this event every year. 
-                  
-                  KnightCTF-2022 was the beginning of that journey and exactly after one year, here we go again!</p>
-                <div class="hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between">
-                    <div class="text-left">
-                        <h6 class="text-lg font-semibold text-gray-700 dark:text-white">First prize</h6>
-                        <p class="mt-2 text-green-300">Some text here</p>
-                    </div>
-                    <div class="text-left">
-                        <h6 class="text-lg font-semibold text-gray-700 dark:text-white">Second Prize</h6>
-                        <p class="mt-2 text-green-300">Some text here</p>
-                    </div>
-                    <div class="text-left">
-                        <h6 class="text-lg font-semibold text-gray-700 dark:text-white">Third Prize</h6>
-                        <p class="mt-2 text-green-300">Some text here</p>
-                    </div>
-                </div>
-            </div>
+          <h1
+            class="text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-5xl"
+          >
+            The one and only international CTF from <span
+              class="text-primary dark:text-white">Bangladesh!</span
+            >
+          </h1>
         </div>
-    </Container>
+        <p class="mt-8 text-gray-700 dark:text-green-300">
+          KnightCTF is an international CTF competition organized by Knight
+          Squad Community. We started the trend to organize international CTF
+          events in Bangladesh with KnightCTF-2022 and we are determined to
+          continue this event every year. KnightCTF-2022 was the beginning of
+          that journey and exactly after one year, here we go again!
+        </p>
+        <div
+          class="hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between"
+        >
+          <div class="text-left">
+            <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
+              First prize
+            </h6>
+            <p class="mt-2 text-green-300">Some text here</p>
+          </div>
+          <div class="text-left">
+            <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
+              Second Prize
+            </h6>
+            <p class="mt-2 text-green-300">Some text here</p>
+          </div>
+          <div class="text-left">
+            <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
+              Third Prize
+            </h6>
+            <p class="mt-2 text-green-300">Some text here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
 </div>
