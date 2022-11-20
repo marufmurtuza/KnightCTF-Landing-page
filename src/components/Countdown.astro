@@ -12,8 +12,8 @@ const futureDate = add(new Date(), {
 
 <div>
     <Container>
-      <div class="space-y-6 justify-between text-gray-600 md:flex flex-row-reverse md:gap-6 md:space-y-0 lg:gap-12 lg:items-center">
-        <div class="md:5/12 lg:w-1/2">
+      <div class="space-y-6 justify-between text-gray-600 md:flex flex-col md:flex-row-reverse md:gap-6 md:space-y-0 lg:gap-12 lg:items-center">
+        <div class="hidden sm:block md:w-5/12 lg:w-1/2">
           <Ticker client:load futureDate={futureDate} />
         </div>
         <div class="md:7/12 lg:w-1/2">
