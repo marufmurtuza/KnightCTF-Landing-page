@@ -1,57 +1,56 @@
 // import { useTicker } from '../../../hooks';
-import { TickerCell } from '../TickerCell';
-import { TickerSeparator } from '../TickerSeparator';
+import { TickerCell } from "../TickerCell";
+import { TickerSeparator } from "../TickerSeparator";
 // import style from './Ticker.module.scss';
-import { intervalToDuration, isBefore } from 'date-fns';
+import { getDaysInMonth, intervalToDuration, isBefore } from "date-fns";
 import { useEffect, useState } from "react";
 
-
 const useTicker = (futureDate) => {
-    const [now, setNow] =  useState(new Date());
+  const [now, setNow] = useState(new Date());
 
-    useEffect(() => {        
-        const interval = setInterval(() => {
-            setNow(new Date());          
-        }, 1000);
-    
-        return () => {
-          clearInterval(interval);
-        };
-    }, [futureDate]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNow(new Date());
+    }, 1000);
 
-    const isTimeUp = isBefore(futureDate, now);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [futureDate]);
 
-    if (isTimeUp) {
-        return { days: 0, hours: 0, minutes: 0, seconds: 0, isTimeUp };
-    }
+  const isTimeUp = isBefore(futureDate, now);
 
-    let { days, hours, minutes, seconds } = intervalToDuration({
-        start: now,
-        end: futureDate
-    });
+  if (isTimeUp) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0, isTimeUp };
+  }
 
-    return { days, hours, minutes, seconds, isTimeUp };
+  let { months, days, hours, minutes, seconds } = intervalToDuration({
+    start: now,
+    end: futureDate,
+  });
+  if (months > 0) {
+    const result = getDaysInMonth(new Date(2023, months - 1));
+    days = days + result;
+  }
+
+  return { days, hours, minutes, seconds, isTimeUp };
 };
 
 export const Ticker = ({ futureDate }) => {
-    const { days, hours, minutes, seconds, isTimeUp } = useTicker(futureDate);
-    const tickerContents = isTimeUp ? (
-        <div >Time is up!!!</div>
-    ) : (
-        <>
-            <TickerCell value={days} label="Days" />
-            <TickerSeparator />
-            <TickerCell value={hours} label="Hours" />
-            <TickerSeparator />
-            <TickerCell value={minutes} label="Minutes" />
-            <TickerSeparator />
-            <TickerCell value={seconds} label="Seconds" />
-        </>
-    );
+  const { days, hours, minutes, seconds, isTimeUp } = useTicker(futureDate);
+  const tickerContents = isTimeUp ? (
+    <div>Time is up!!!</div>
+  ) : (
+    <>
+      <TickerCell value={days} label="Days" />
+      <TickerSeparator />
+      <TickerCell value={hours} label="Hours" />
+      <TickerSeparator />
+      <TickerCell value={minutes} label="Minutes" />
+      <TickerSeparator />
+      <TickerCell value={seconds} label="Seconds" />
+    </>
+  );
 
-    return (
-        <div class="flex p-30 ">
-            { tickerContents }      
-        </div>              
-    );
-}
+  return <div class="flex p-30 ">{tickerContents}</div>;
+};
