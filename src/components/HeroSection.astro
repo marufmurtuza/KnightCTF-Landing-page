@@ -5,14 +5,14 @@ import Container from "./Container.astro";
 <div class="relative">
   <div
     aria-hidden="true"
-    class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
+    class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20"
   >
     <div
-      class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"
+      class="blur-[106px] h-56 bg-gradient-to-br from-blue-700 to-purple-400 "
     >
     </div>
     <div
-      class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"
+      class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-indigo-600"
     >
     </div>
   </div>
@@ -23,14 +23,14 @@ import Container from "./Container.astro";
           <img src="./logo/KCTF_LOGO_Neon.png" width="150px" class="mb-5" />
 
           <h1
-            class="text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-5xl"
+            class="text-white font-bold text-4xl md:text-5xl xl:text-5xl"
           >
             The most awaited international CTF from <span
-              class="text-primary dark:text-white">Bangladesh!</span
+              class="text-white">Bangladesh!</span
             >
           </h1>
         </div>
-        <p class="mt-8 text-gray-700 dark:text-green-300">
+        <p class="mt-8 text-green-300">
           KnightCTF is an international CTF competition organized by Knight
           Squad Community. We started the trend to organize international CTF
           events in Bangladesh with KnightCTF-2022 and we are determined to
@@ -39,32 +39,33 @@ import Container from "./Container.astro";
         </p>
         <div class="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
           <a
-            href="#"
-            target="_blank"
-            class="relative flex h-11 items-center justify-center px-6 before:absolute before:inset-0 before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+          href="https://knightsquad.org/ "
+          target="_blank"
+          class="relative hidden h-11 items-center justify-center px-6 before:absolute before:inset-0 before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
           >
+          <!-- replace flex with hidden above -->
             <span class="relative text-base font-semibold text-white"
-              >Register
+              >Go To Event Page
             </span>
           </a>
         </div>
         <div
-          class="hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between"
+          class="hidden py-8 mt-16 border-y border-gray-800 sm:flex justify-between"
         >
           <div class="text-left">
-            <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
+            <h6 class="text-lg font-semibold text-white">
               First prize
             </h6>
             <p class="mt-2 text-green-300">Some text here</p>
           </div>
           <div class="text-left">
-            <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
+            <h6 class="text-lg font-semibold text-white">
               Second Prize
             </h6>
             <p class="mt-2 text-green-300">Some text here</p>
           </div>
           <div class="text-left">
-            <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
+            <h6 class="text-lg font-semibold text-white">
               Third Prize
             </h6>
             <p class="mt-2 text-green-300">Some text here</p>
